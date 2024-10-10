@@ -56,7 +56,7 @@ const Details = ({ capturedImage, onShare, onReset }) => {
       );
 
       console.log("Success:", response.data);
-      alert("Successfully registered!");
+      // alert("Successfully registered!");
       setName("");
       setEmail("");
       setNumber("");
