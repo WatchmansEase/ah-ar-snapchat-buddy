@@ -1,0 +1,76 @@
+/* snapstyle.css */
+.capture-button, .toggle-button {
+    padding: 15px 30px; /* Increased padding for better visibility */
+    font-size: 18px; /* Increased font size */
+    /* Light background for better contrast */
+    border: none; 
+    cursor: pointer;
+}
+
+canvas {
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+  }
+  
+.continue-button {
+    padding: 10px 20px;
+   
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+@supports (-webkit-touch-callout: none) {
+    .camera-view {
+      transform: rotate(0deg) !important;
+    }
+  }
+
+.continue-button:hover {
+    background-color: #45a049;
+}
+.back-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    .capture-button, .toggle-button {
+        font-size: 16px;
+        padding: 12px 24px; /* Adjusted padding for mobile */
+    }
+
+    .back-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+/* Additional styles for the camera and buttons */
+.button-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 1;
+}
+.capture-button, .toggle-button {
+    padding: 15px 30px; /* Increased padding for better visibility */
+    font-size: 18px; /* Increased font size */
+ /* Light background for better contrast */
+    border: none; 
+
+    cursor: pointer;
+  
+}
+
+
+@media (max-width: 600px) {
+    .capture-button, .toggle-button {
+        font-size: 16px;
+        padding: 12px 24px; /* Adjusted padding for mobile */
+    }
+}
