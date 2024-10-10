@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const Details = ({ capturedImage, onShare, onReset }) => {
   const [name, setName] = useState("");
@@ -43,20 +44,18 @@ const Details = ({ capturedImage, onShare, onReset }) => {
     const userDetails = { name, email, number };
 
     try {
-      const response = await fetch("/api/collect", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userDetails),
-      });
+      // Use Axios to make a POST request
+      const response = await axios.post(
+        "https://vercel-serverless-func-seven.vercel.app/api/save-user",
+        userDetails, // Send the data object directly
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-
-      const data = await response.json();
-      console.log("Success:", data);
+      console.log("Success:", response.data);
       alert("Successfully registered!");
       setName("");
       setEmail("");
@@ -64,6 +63,7 @@ const Details = ({ capturedImage, onShare, onReset }) => {
       return true;
     } catch (error) {
       console.error("Error:", error);
+      alert("Failed to register.");
       return false;
     }
   };
