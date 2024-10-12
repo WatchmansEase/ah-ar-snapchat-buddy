@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@snap/camera-kit": "^0.22.0",
+    "axios": "^1.7.7",
     "dex": "file:",
     "dotenv": "^16.4.5",
     "html2canvas": "^1.4.1",
