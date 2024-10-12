@@ -10,9 +10,11 @@ const App = () => {
   const [capturedImage, setCapturedImage] = useState(null);
   const [showDetails, setShowDetails] = useState(false);
   const [showThankYou, setShowThankYou] = useState(false); // State to show Thank You component
+  const [newsLetter, setNewsletter] = useState(false);
 
-  const handleAgreement = () => {
+  const handleAgreement = (newsLetterConsert) => {
     setHasAgreed(true);
+    setNewsletter(newsLetterConsert);
   };
 
   const handleImageCapture = (imageUrl) => {
@@ -28,7 +30,7 @@ const App = () => {
     setShowDetails(false);
   };
 
-  const shareImage = async (emailAddress) => {
+  const shareImage = async () => {
     if (capturedImage) {
       const blob = await fetch(capturedImage).then((res) => res.blob());
       const file = new File([blob], "captured-image.png", {
@@ -39,20 +41,16 @@ const App = () => {
         try {
           await navigator.share({
             title: "Check out this image!",
-            text: `Here is the image I captured. Send it to: ${emailAddress}`,
+            text: "Here is the image I captured.",
             files: [file],
             url: window.location.href,
           });
           console.log("Image shared successfully");
-          setShowThankYou(true); // Show the Thank You component after sharing
+          setShowThankYou(true);
         } catch (error) {
           console.error("Error sharing the image:", error);
-          openEmailClient(emailAddress); // Fallback
-          setShowThankYou(true); // Show Thank You even if the fallback is used
+          setShowThankYou(true);
         }
-      } else {
-        openEmailClient(emailAddress); // Fallback
-        setShowThankYou(true); // Show Thank You after fallback
       }
     }
   };
@@ -63,6 +61,7 @@ const App = () => {
     setCapturedImage(null);
     setShowDetails(false);
     setShowThankYou(false); // Reset Thank You screen
+    setNewsletter(false);
   };
 
   return (
@@ -85,6 +84,7 @@ const App = () => {
               capturedImage={capturedImage}
               onShare={shareImage}
               onReset={resetApp} // Pass the reset function to Details
+              newsLetter={newsLetter}
             />
           )}
         </>

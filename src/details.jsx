@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const Details = ({ capturedImage, onShare, onReset }) => {
+const Details = ({ capturedImage, onShare, onReset, newsLetter }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
-
+  
   const phoneNumberRegex = /^\+?[0-9]{10,15}$/;
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const nameRegex = /^[a-zA-Z\u0370-\u03FF\u1F00-\u1FFF\s]+$/; // Support Greek
@@ -58,6 +58,7 @@ const Details = ({ capturedImage, onShare, onReset }) => {
           name: name,
           email: email,
           phoneNumber: number,
+          hasNewsletter: newsLetter,
         },
         {
           headers: {

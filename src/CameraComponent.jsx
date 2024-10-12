@@ -122,20 +122,9 @@ const CameraComponent = ({ onImageCapture, capturedImage, onBackToCamera, onCont
                     console.log('Image shared successfully');
                 } catch (error) {
                     console.error('Error sharing the image:', error);
-                    // fallback to clinet
-                    openEmailClient(emailAddress);
                 }
-            } else {
-              
-                openEmailClient(emailAddress);
-            }
+            } 
         }
-    };
-
-    const openEmailClient = (emailAddress) => {
-        const subject = 'Check out this image!';
-        const body = `Here is the image I captured: ${capturedImage}`;
-        window.location.href = `mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     };
     
 
