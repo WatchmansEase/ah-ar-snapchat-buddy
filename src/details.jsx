@@ -8,7 +8,7 @@ const Details = ({ capturedImage, onShare, onReset }) => {
 
   const phoneNumberRegex = /^\+?[0-9]{10,15}$/;
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const nameRegex = /^[a-zA-Z\s]+$/;
+  const nameRegex = /^[a-zA-Z\u0370-\u03FF\u1F00-\u1FFF\s]+$/; // Support Greek
 
   const validateForm = () => {
     if (!name.trim()) {
@@ -31,23 +31,49 @@ const Details = ({ capturedImage, onShare, onReset }) => {
       alert("Please enter your phone number.");
       return false;
     } else if (!phoneNumberRegex.test(number)) {
-      alert(
-        "Please enter a valid phone number. It should contain 10 to 15 digits and can optionally start with '+'."
-      );
+      alert("Please enter a valid phone number.");
       return false;
     }
-
     return true;
   };
 
   const handleSubmit = async () => {
-    const userDetails = { name, email, number };
+    const convertToBase64 = (blob) => {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(blob);
+        reader.onloadend = () => resolve(reader.result);
+        reader.onerror = (error) => reject(error);
+      });
+    };
 
     try {
-      // Use Axios to make a POST request
+      const blob = await fetch(capturedImage).then((res) => res.blob());
+      const base64Image = await convertToBase64(blob);
+
+      // 1. Send user details to the Backend API
       const response = await axios.post(
         "https://vercel-serverless-func-seven.vercel.app/api/save-user",
-        userDetails, // Send the data object directly
+        {
+          name: name,
+          email: email,
+          phoneNumber: number,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log("User saved:", response.data);
+
+      // 2. Pass email and Base64 image string to the Backend API
+      const emailResponse = await axios.post(
+        "https://vercel-serverless-func-seven.vercel.app/api/send-email-image",
+        {
+          email: email,
+          image: base64Image,
+        },
         {
           headers: {
             "Content-Type": "application/json",
@@ -55,7 +81,7 @@ const Details = ({ capturedImage, onShare, onReset }) => {
         }
       );
 
-      console.log("Success:", response.data);
+      console.log("Email sent:", emailResponse.data);
       // alert("Successfully registered!");
       setName("");
       setEmail("");
@@ -73,7 +99,6 @@ const Details = ({ capturedImage, onShare, onReset }) => {
 
     if (isFormValid) {
       const isSubmitted = await handleSubmit();
-
       if (isSubmitted && capturedImage) {
         onShare();
       } else if (!capturedImage) {
