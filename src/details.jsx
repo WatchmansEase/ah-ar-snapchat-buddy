@@ -178,7 +178,7 @@ const Details = ({ capturedImage, onShare, onReset, newsLetter }) => {
           alt="submit"
           onClick={handleShareClick}
           style={{
-            width: "100px",
+            width: "160px",
           }}
         />
       </div>
