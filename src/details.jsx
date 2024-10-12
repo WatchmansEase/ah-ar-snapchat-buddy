@@ -129,12 +129,14 @@ const Details = ({ capturedImage, onShare, onReset, newsLetter }) => {
             <div>
               <h6 className="sub-header">Πεδία υποχρεωτικής συμπλήρωσης:</h6>
               <div className="form-label-input">
-                <label htmlFor="name">
-                  <b>Ονοματεπώνυμο</b>
+                <label htmlFor="name"
+                className="name-label">
+                  Ονοματεπώνυμο
                 </label>
                 <br />
                 <input
                   type="text"
+                  className="name-input"
                   id="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
@@ -142,27 +144,31 @@ const Details = ({ capturedImage, onShare, onReset, newsLetter }) => {
                 />
 
                 <div>
-                  <label htmlFor="number">
-                    <b>Τηλέφωνο</b>
+                  <label htmlFor="number"
+                  className="number-label">
+                    Τηλέφωνο
                   </label>
                   <br />
                   <input
                     type="text"
                     id="number"
+                    className="number-input"
                     value={number}
                     onChange={(e) => setNumber(e.target.value)}
                     required
                   />
                 </div>
                 <div>
-                  <label htmlFor="email">
-                    <b>Email:</b>
+                  <label htmlFor="email" 
+                  className="email-label">
+                    Email:
                   </label>
                   <br />
                   <input
                     type="email"
-                    id="email"
+                    id="email" 
                     value={email}
+                    className="email-input"
                     onChange={(e) => setEmail(e.target.value)}
                     required
                   />
