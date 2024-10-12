@@ -1,0 +1,111 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+#root {
+  
+  display: flex;  /* Optional: To center contents */
+    justify-content: center;
+   
+    min-height: 100vh;  /* Ensures the root fills at least the full viewport */
+    overflow: hidden; 
+ 
+  text-align: center;
+  position: relative; 
+}
+
+
+body {
+
+  background-size: contain; 
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden; 
+}
+
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+  z-index: 2; 
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa); 
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo {
+    animation: logo-spin infinite 20s linear; 
+  }
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.card {
+  padding: 2em;
+  z-index: 3; 
+  position: relative;
+}
+
+.button-container {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3; 
+  border: 1px solid red;
+}
+
+
+@media (max-width: 768px) {
+  body {
+    background-size: contain;
+  }
+  #root {
+    padding: 1rem;
+  }
+
+  .logo {
+    height: 4em; 
+    padding: 1rem;
+  }
+
+  .button-container {
+    bottom: 15px;
+    gap: 5px;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    height: 3em;
+  }
+    body {
+      background-size: contain;
+    }
+  .button-container {
+    bottom: 10px;
+    gap: 3px;
+  }
+}
+}
