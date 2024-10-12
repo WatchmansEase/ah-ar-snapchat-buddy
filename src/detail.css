@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'CustomFont';
-    src: url('assets/fonts/MyriadPro-Regular_2.otf') format('opentype');
+    src: url('assets/fonts/PingLCG-Bold.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -25,10 +25,13 @@
     height: 100vh;
 }
 .sub-header{
+    position: relative;
     font-family: 'CustomFont', sans-serif;
     font-size: 15px;
    }
 .detail-header{
+    
+    line-height: 1.2;
     font-family: 'CustomFont', sans-serif;
     padding: 20px;
     font-size: 20px;
@@ -36,6 +39,7 @@
     margin-bottom: 0px;
    }
 .submit-button{
+    
     position: relative;
     left: 50vh;
     bottom: 25vh;
@@ -69,11 +73,11 @@
     
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px){
+@media only screen and (min-device-width: 711px) and (max-device-width: 1024px){
     .detail-header{
         font-family: 'CustomFont', sans-serif;
-        padding: 20px;
-        font-size: 32px;
+        padding: 0;
+        font-size: 37px;
         color:rgb(14, 14, 13);
        }
     
@@ -83,7 +87,7 @@
         width: 44vh;
         position: relative;
         top: 14vh;
-        height: 66vh;
+        height: 60vh;
         background-color: #D7D7D7;
         flex-direction: column;
         display: flex;
@@ -94,24 +98,30 @@
         flex-direction: column;
         align-items: flex-start;
         text-align: start;
-        left: 12vh;
+        left: 2vh;
+        top:1vh;
       
     }
     .form-label-input label{
         
         font-size: 25px;
     }.form-label-input input{
-        transform: scale(2);
+        width:28vh;
+        height: 3vh;
     }
     .sub-header{
+    
+        top:6vh;
+        right:0vh;
         font-family: 'CustomFont', sans-serif;
-        font-size: 25px;
+        font-size: 24px;
        }
   
     .submit-button{
+
         position: absolute;
-        left: 39vh;
-        bottom: 16vh;
+        left: 37vh;
+        bottom: 15vh;
         transform: translate(-50%);
         cursor: pointer;
     }
