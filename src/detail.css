@@ -24,7 +24,6 @@
 }
 .form-header {
     position: relative;
-    overflow: scroll;
     background-image: url('assets/backgrounds/4x/Asset 6@4x.png');
     background-size: contain; 
     background-position: center;
