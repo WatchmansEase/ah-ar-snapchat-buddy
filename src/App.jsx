@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ConsentPopup from "./popup";
 import CameraComponent from "./CameraComponent";
 import Details from "./details";
-import ThankYou from "./ThankYou";
+import ResetButton from "./ResetButton";
 import "./App.css";
 
 const App = () => {
@@ -37,33 +37,6 @@ const App = () => {
     console.log("its' triggering badck to camera");
   };
 
-  const shareImage = async () => {
-    if (capturedImage) {
-      const blob = await fetch(capturedImage).then((res) => res.blob());
-      const file = new File([blob], "captured-image.png", {
-        type: "image/png",
-      });
-
-      if (navigator.share) {
-        try {
-          await navigator.share({
-            title: "Check out this image!",
-            text: `Here is the image I captured.`,
-            files: [file],
-            url: window.location.href,
-          });
-          console.log("Image shared successfully");
-          setShowThankYou(true);
-        } catch (error) {
-          console.error("Error sharing the image:", error);
-          setShowThankYou(true);
-        }
-      } else {
-        setShowThankYou(true);
-      }
-    }
-  };
-
   const resetApp = () => {
     setHasAgreed(false);
     setCapturedImage(null);
@@ -77,7 +50,7 @@ const App = () => {
       {!hasAgreed ? (
         <ConsentPopup onAgree={handleAgreement} />
       ) : showThankYou ? (
-        <ThankYou onReset={resetApp} />
+        <ResetButton onReset={resetApp} />
       ) : (
         <>
           {!showDetails ? (
@@ -90,7 +63,6 @@ const App = () => {
           ) : (
             <Details
               capturedImage={capturedImage}
-              onShare={shareImage}
               onReset={resetApp}
               newsLetter={newsLetter}
             />

@@ -144,29 +144,6 @@ const CameraComponent = ({
     setupCamera();
   };
 
-  const shareImage = async (emailAddress) => {
-    if (capturedImage) {
-      const blob = await fetch(capturedImage).then((res) => res.blob());
-      const file = new File([blob], "captured-image.png", {
-        type: "image/png",
-      });
-
-      if (navigator.share) {
-        try {
-          await navigator.share({
-            title: "Check out this image!",
-            text: `Here is the image I captured. Send it to: ${emailAddress}`,
-            files: [file],
-            url: window.location.href,
-          });
-          console.log("Image shared successfully");
-        } catch (error) {
-          console.error("Error sharing the image:", error);
-        }
-      }
-    }
-  };
-
   return (
     // <div style={{ position: 'relative', height: '100vh', overflow: 'hidden' }}>
     <div>
@@ -175,7 +152,6 @@ const CameraComponent = ({
         <ImagePreview
           capturedImage={capturedImage}
           onBack={onBackToCamera}
-          onShare={() => shareImage(email)}
           onContinue={() => {
             onContinue();
           }}

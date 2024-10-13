@@ -45,7 +45,15 @@ const ConsentPopup = ({ onAgree }) => {
                   onChange={handleCheckboxChange}
                 />
                 <h4>
-                  Αποδέχομαι τους <a href="">όρους</a> <br />
+                  Αποδέχομαι τους{" "}
+                  <a
+                    href="https://www.dei.gr/en/terms-of-use/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    όρους
+                  </a>{" "}
+                  <br />
                   του διαγωνισμού.
                 </h4>
               </div>

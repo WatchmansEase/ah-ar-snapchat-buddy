@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import ThankYou from "./ThankYou";
+import ResetButton from "./ResetButton";
 import "./detail.css";
 import axios from "axios";
 
-const Details = ({ capturedImage, onShare, onReset, newsLetter }) => {
+const Details = ({ capturedImage, onReset, newsLetter }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
@@ -51,8 +51,8 @@ const Details = ({ capturedImage, onShare, onReset, newsLetter }) => {
       const blob = await fetch(capturedImage).then((res) => res.blob());
       const base64Image = await convertToBase64(blob);
 
-      // 1. Send user details to the Backend API
-      const response = await axios.post(
+      // Send user details to the Backend API
+      await axios.post(
         "https://vercel-serverless-func-seven.vercel.app/api/save-user",
         {
           name: name,
@@ -66,28 +66,34 @@ const Details = ({ capturedImage, onShare, onReset, newsLetter }) => {
           },
         }
       );
-      console.log("User saved:", response.data);
 
-      // 2. Pass email and Base64 image string to the Backend API
-      const emailResponse = await axios.post(
-        "https://vercel-serverless-func-seven.vercel.app/api/send-email-image",
-        {
-          email: email,
-          image: base64Image,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
+      // Send email asynchronously but don't wait for it to complete before showing feedback
+      axios
+        .post(
+          "https://vercel-serverless-func-seven.vercel.app/api/send-email-image",
+          {
+            email: email,
+            image: base64Image,
           },
-        }
-      );
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        )
+        .then((response) => {
+          console.log("Email sent:", response.data);
+        })
+        .catch((error) => {
+          console.error("Error sending email:", error);
+        });
 
-      console.log("Email sent:", emailResponse.data);
-      alert("Successfully registered!");
       setName("");
       setEmail("");
       setNumber("");
       setShowThankYou(true);
+      // Show Thank You message after form submission without waiting for email to finish
+      alert("Successfully registered! Your email will be sent shortly.");
       return true;
     } catch (error) {
       console.error("Error:", error);
@@ -95,20 +101,8 @@ const Details = ({ capturedImage, onShare, onReset, newsLetter }) => {
     }
   };
 
-  const handleShareClick = async () => {
-    const isFormValid = validateForm();
-    if (isFormValid) {
-      const isSubmitted = await handleSubmit();
-      if (isSubmitted && capturedImage) {
-        onShare();
-      } else if (!capturedImage) {
-        alert("No image available to share.");
-      }
-    }
-  };
-
   if (showThankYou) {
-    return <ThankYou />;
+    return <ResetButton onReset={onReset} />; // Pass onReset to ResetButton
   }
 
   return (
@@ -176,7 +170,7 @@ const Details = ({ capturedImage, onShare, onReset, newsLetter }) => {
         <img
           src="/buttons/dheeraj.png"
           alt="submit"
-          onClick={handleShareClick}
+          onClick={handleSubmit}
           style={{
             width: "100px",
           }}
