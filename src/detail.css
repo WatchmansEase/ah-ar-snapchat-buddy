@@ -1,126 +1,136 @@
 @font-face {
-    font-family: 'CustomFont';
-    src: url('assets/fonts/MyriadPro-Regular_2.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "CustomFont";
+  src: url("assets/fonts/MyriadPro-Regular_2.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }
 .form-header {
-    position: relative;
-    overflow: scroll;
-    background-image: url('assets/backgrounds/4x/Asset 6@4x.png');
-    background-size: cover; 
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    width: 100vh;
-    flex-direction: column;
-   
-    
-    /* margin-top: 6%; */
-    /* width: 36vh; */
-   
-    /* margin-left: 15%; */
-    position: relative;
-    top: 0%;
-    height: 100vh;
+  position: relative;
+  overflow: scroll;
+  background-image: url("assets/backgrounds/4x/Asset 6@4x.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  width: 100vh;
+  flex-direction: column;
+
+  /* margin-top: 6%; */
+  /* width: 36vh; */
+
+  /* margin-left: 15%; */
+  position: relative;
+  top: 0%;
+  height: 100vh;
 }
-.sub-header{
-    font-family: 'CustomFont', sans-serif;
-    font-size: 15px;
-   }
-.detail-header{
-    font-family: 'CustomFont', sans-serif;
+.sub-header {
+  font-family: "CustomFont", sans-serif;
+  font-size: 15px;
+}
+.detail-header {
+  font-family: "CustomFont", sans-serif;
+  padding: 20px;
+  font-size: 20px;
+  color: rgb(14, 14, 13);
+  margin-bottom: 0px;
+}
+.submit-button {
+  position: relative;
+  left: 50vh;
+  bottom: 25vh;
+  transform: translate(-50%);
+  cursor: pointer;
+  outline: none;
+}
+
+.form-header-inside {
+  clip-path: polygon(
+    5% 0,
+    100% 0,
+    100% 53%,
+    97% 53%,
+    96% 100%,
+    0 100%,
+    0 48%,
+    4% 48%
+  );
+  right: -28vh;
+  width: 44vh;
+  position: relative;
+  top: 14vh;
+  height: 66vh;
+  background-color: #f0f3f5;
+  flex-direction: column;
+  display: flex;
+}
+.form-label-input {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: start;
+  left: 12vh;
+}
+.form-label-input label {
+  font-size: 20px;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .detail-header {
+    font-family: "CustomFont", sans-serif;
     padding: 20px;
-    font-size: 20px;
-    color:rgb(14, 14, 13);
-    margin-bottom: 0px;
-   }
-.submit-button{
-    position: relative;
-    left: 50vh;
-    bottom: 25vh;
-    transform: translate(-50%);
-    cursor: pointer;
-}
-.form-header-inside{
-    clip-path: polygon(5% 0, 100% 0, 100% 53%, 97% 53%, 96% 100%, 0 100%, 0 48%, 4% 48%);
+    font-size: 32px;
+    color: rgb(14, 14, 13);
+  }
+
+  .form-header-inside {
+    clip-path: polygon(
+      5% 0,
+      100% 0,
+      100% 53%,
+      97% 53%,
+      96% 100%,
+      0 100%,
+      0 48%,
+      4% 48%
+    );
     right: -28vh;
     width: 44vh;
     position: relative;
     top: 14vh;
     height: 66vh;
-    background-color: #f0f3f5;
+    background-color: #d7d7d7;
     flex-direction: column;
     display: flex;
-}
-.form-label-input{
+  }
+  .form-label-input {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     text-align: start;
     left: 12vh;
-  
-}
-.form-label-input label{
-    
-    font-size: 20px;
-}.form-label-input input{
-    
-}
+  }
+  .form-label-input label {
+    font-size: 25px;
+  }
+  .form-label-input input {
+    transform: scale(2);
+  }
+  .sub-header {
+    font-family: "CustomFont", sans-serif;
+    font-size: 25px;
+  }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px){
-    .detail-header{
-        font-family: 'CustomFont', sans-serif;
-        padding: 20px;
-        font-size: 32px;
-        color:rgb(14, 14, 13);
-       }
-    
-    .form-header-inside{
-        clip-path: polygon(5% 0, 100% 0, 100% 53%, 97% 53%, 96% 100%, 0 100%, 0 48%, 4% 48%);
-        right: -28vh;
-        width: 44vh;
-        position: relative;
-        top: 14vh;
-        height: 66vh;
-        background-color: #D7D7D7;
-        flex-direction: column;
-        display: flex;
-    }
-    .form-label-input{
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: start;
-        left: 12vh;
-      
-    }
-    .form-label-input label{
-        
-        font-size: 25px;
-    }.form-label-input input{
-        transform: scale(2);
-    }
-    .sub-header{
-        font-family: 'CustomFont', sans-serif;
-        font-size: 25px;
-       }
-  
-    .submit-button{
-        position: absolute;
-        left: 39vh;
-        bottom: 16vh;
-        transform: translate(-50%);
-        cursor: pointer;
-    }
-   
-    img {
-        image-rendering: -webkit-optimize-contrast;
-      }
- 
-
-  
-    
-} 
+  .submit-button {
+    position: absolute;
+    left: 39vh;
+    bottom: 16vh;
+    transform: translate(-50%);
+    cursor: pointer;
+    outline: none;
+  }
+  img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}

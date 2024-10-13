@@ -20,13 +20,6 @@ const Details = ({ capturedImage, onReset, newsLetter }) => {
       alert("Name cannot contain digits or symbols.");
       return false;
     }
-    if (!email.trim()) {
-      alert("Please enter your email.");
-      return false;
-    } else if (!emailRegex.test(email)) {
-      alert("Please enter a valid email address.");
-      return false;
-    }
     if (!number.trim()) {
       alert("Please enter your phone number.");
       return false;
@@ -34,10 +27,23 @@ const Details = ({ capturedImage, onReset, newsLetter }) => {
       alert("Please enter a valid phone number.");
       return false;
     }
+    if (!email.trim()) {
+      alert("Please enter your email.");
+      return false;
+    } else if (!emailRegex.test(email)) {
+      alert("Please enter a valid email address.");
+      return false;
+    }
     return true;
   };
 
   const handleSubmit = async () => {
+    // Call validateForm() to check if the inputs are valid
+    const isFormValid = validateForm();
+    if (!isFormValid) {
+      return; // Stop execution if the form is not valid
+    }
+
     const convertToBase64 = (blob) => {
       return new Promise((resolve, reject) => {
         const reader = new FileReader();

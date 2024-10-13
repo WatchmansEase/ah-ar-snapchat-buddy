@@ -1,146 +1,135 @@
 @font-face {
-    font-family: 'CustomFont';
-    src: url('assets/fonts/MyriadPro-Regular_2.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "CustomFont";
+  src: url("assets/fonts/MyriadPro-Regular_2.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 .popup-first {
-    background-image: url('assets/backgrounds/4x/Asset 6@4x.png');
-    background-size: contain; 
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh; 
-     display: flex; 
-    justify-content: center; 
-    align-items: center;   
+  background-image: url("assets/backgrounds/4x/Asset 6@4x.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .popup a {
-    color: yellow;
+  color: yellow;
 }
-.popup-first{
-    width:800px;
+.popup-first {
+  width: 800px;
 }
 .popup img {
-    margin-top: 10%;
+  margin-top: 10%;
 }
 
 .popup {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    font-family: 'CustomFont', sans-serif;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    z-index: 1000;
-    text-align: center;
-    align-items: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  font-family: "CustomFont", sans-serif;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  z-index: 1000;
+  text-align: center;
+  align-items: center;
 }
 
 .button-container {
-    margin-top: 40px;
-    text-align: center;
+  margin-top: 40px;
+  text-align: center;
 }
 
 .button {
-    padding: 10px 20px;
-    font-size: 16px;
+  padding: 10px 20px;
+  font-size: 16px;
 }
 
-
-
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .popup-first {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .popup-h4-input {
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .popup-h4-input input {
+    width: 50px;
+  }
+  .popup-h4-input-2-1 {
+    text-align: start;
+    margin-bottom: 10%;
+    display: flex;
+    gap: 5px;
+    justify-content: space-around;
+  }
+  .popup-h4-input-2-2 {
+    text-align: start;
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+    margin-bottom: 10%;
+  }
+  .popup-h4-input-2 input {
+    width: 20px;
+  }
+  .popup-h4-input-2 {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .popup-img-flex {
+    margin-top: 10%;
+    width: 180%;
+    display: flex;
+    justify-content: center;
+    outline: none;
+  }
+  .popup {
+    max-width: 100%;
+    max-height: 100%;
+    font-size: 18px;
+  }
+  .pop-first-title {
+    font-size: 35px;
+  }
+  .pop-second-title {
+    font-size: 34px;
+  }
+  .popup img {
+    width: 30%;
+    margin-top: 5%;
+  }
+  .popup-input-text {
+    text-align: start;
+    margin-bottom: 5%;
+    margin-right: 5%;
+    margin-top: 10%;
 
-   
-    .popup-first {
-       
-        background-size: contain; 
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 100vh; 
-         display: flex; 
-        justify-content: center; 
-        align-items: center;   
-    }
-    .popup-h4-input{
-        display: flex;
-        flex-direction: row;
-        align-content: stretch;
-        justify-content: space-between;
-        align-items: center;
-    
-    }
-    .popup-h4-input input{
-        width: 50px;
-       
-    }
-    .popup-h4-input-2-1{
-        text-align: start;
-        margin-bottom: 10%;
-        display: flex;
-        gap: 5px;
-        justify-content: space-around;
-    }
-    .popup-h4-input-2-2{
-        text-align: start;
-        display: flex;
-        justify-content: flex-start;
-        gap: 30px;
-        margin-bottom: 10%;
+    display: flex;
+    flex-direction: column;
+  }
 
-
-    }
-    .popup-h4-input-2 input{
-        width: 20px;
-       
-    }
-    .popup-h4-input-2{
-        margin-top: 10%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    .popup-img-flex{
-        margin-top: 10%;
-        width:180%;
-        display: flex;
-        justify-content: center;
-    }
-    .popup {
-       max-width: 100%;
-       max-height: 100%;
-        font-size: 18px;
-    }
-    .pop-first-title{
-        font-size: 35px;
-    }
-    .pop-second-title{
-        font-size: 34px;
-    }
-    .popup img {
-        width: 30%;
-        margin-top: 5%;
-    }
-    .popup-input-text{
-        text-align: start;
-        margin-bottom: 5%;
-        margin-right: 5%;
-        margin-top: 10%;
-
-        display: flex;
-        flex-direction: column;
-    }
-
-    
-    .popup  input {
-        transform: scale(2);
-        
-    }
-    .button {
-        font-size: 20px;
-    }
+  .popup input {
+    transform: scale(2);
+  }
+  .button {
+    font-size: 20px;
+  }
 }
