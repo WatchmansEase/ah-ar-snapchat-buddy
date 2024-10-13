@@ -124,15 +124,13 @@ const Details = ({ capturedImage, onReset, newsLetter }) => {
             <br />
             της φωτογραφίας
           </h2>
-
           <form onSubmit={(e) => e.preventDefault()}>
             <div>
-              <h6 className="sub-header">Πεδία υποχρεωτικής συμπλήρωσης:</h6>
+              <h3 className="sub-header">Πεδία υποχρεωτικής συμπλήρωσης:</h3>
               <div className="form-label-input">
                 <label htmlFor="name">
                   <b>Ονοματεπώνυμο</b>
                 </label>
-                <br />
                 <input
                   type="text"
                   id="name"
@@ -140,33 +138,26 @@ const Details = ({ capturedImage, onReset, newsLetter }) => {
                   onChange={(e) => setName(e.target.value)}
                   required
                 />
-
-                <div>
-                  <label htmlFor="number">
-                    <b>Τηλέφωνο</b>
-                  </label>
-                  <br />
-                  <input
-                    type="text"
-                    id="number"
-                    value={number}
-                    onChange={(e) => setNumber(e.target.value)}
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email">
-                    <b>Email:</b>
-                  </label>
-                  <br />
-                  <input
-                    type="email"
-                    id="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                  />
-                </div>
+                <label htmlFor="number">
+                  <b>Τηλέφωνο</b>
+                </label>
+                <input
+                  type="text"
+                  id="number"
+                  value={number}
+                  onChange={(e) => setNumber(e.target.value)}
+                  required
+                />
+                <label htmlFor="email">
+                  <b>E-mail</b>
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
               </div>
             </div>
           </form>

@@ -5,7 +5,7 @@
   font-style: normal;
 }
 .form-header {
-  position: relative;
+  /* position: relative;
   overflow: scroll;
   background-image: url("assets/backgrounds/4x/Asset 6@4x.png");
   background-size: cover;
@@ -19,20 +19,33 @@
   /* width: 36vh; */
 
   /* margin-left: 15%; */
-  position: relative;
+  /* position: relative;
   top: 0%;
+  height: 100vh; 
+  */
+  background-image: url("assets/backgrounds/4x/Asset 6@4x.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 100vh;
+  width: 100vh;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: white;
 }
 .sub-header {
-  font-family: "CustomFont", sans-serif;
-  font-size: 15px;
+  font-size: 20px;
+  color: #000000;
+  margin-top: 8%;
 }
 .detail-header {
-  font-family: "CustomFont", sans-serif;
+  font-weight: 700;
   padding: 20px;
-  font-size: 20px;
+  font-size: 38px;
   color: rgb(14, 14, 13);
-  margin-bottom: 0px;
+  margin-bottom: 20px;
 }
 .submit-button {
   position: relative;
@@ -45,21 +58,21 @@
 
 .form-header-inside {
   clip-path: polygon(
-    5% 0,
-    100% 0,
-    100% 53%,
-    97% 53%,
-    96% 100%,
-    0 100%,
-    0 48%,
-    4% 48%
+    15% 0%,
+    100% 0%,
+    95% 55%,
+    90% 55%,
+    85% 100%,
+    0% 100%,
+    5% 45%,
+    10% 45%
   );
-  right: -28vh;
-  width: 44vh;
+  right: -26vh;
+  width: 47vh;
+  bottom: 3vh;
   position: relative;
-  top: 14vh;
   height: 66vh;
-  background-color: #f0f3f5;
+  background-color: #d1c8c9;
   flex-direction: column;
   display: flex;
 }
@@ -69,18 +82,23 @@
   flex-direction: column;
   align-items: flex-start;
   text-align: start;
-  left: 12vh;
+  left: 8vh;
 }
 .form-label-input label {
-  font-size: 20px;
+  font-size: 30px;
+  color: #000000;
+}
+.form-label-input > input {
+  width: 60%;
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .detail-header {
-    font-family: "CustomFont", sans-serif;
+    font-weight: 700;
     padding: 20px;
-    font-size: 32px;
+    font-size: 38px;
     color: rgb(14, 14, 13);
+    margin-bottom: 20px;
   }
 
   .form-header-inside {
@@ -99,7 +117,7 @@
     position: relative;
     top: 14vh;
     height: 66vh;
-    background-color: #d7d7d7;
+    background-color: #d1c8c9;
     flex-direction: column;
     display: flex;
   }
@@ -109,17 +127,20 @@
     flex-direction: column;
     align-items: flex-start;
     text-align: start;
-    left: 12vh;
+    left: 8vh;
   }
   .form-label-input label {
-    font-size: 25px;
+    font-size: 30px;
+    color: #000000;
   }
   .form-label-input input {
-    transform: scale(2);
+    /* transform: scale(2); */
+    width: 60%;
   }
   .sub-header {
-    font-family: "CustomFont", sans-serif;
-    font-size: 25px;
+    font-size: 20px;
+    color: #000000;
+    margin-top: 8%;
   }
 
   .submit-button {
