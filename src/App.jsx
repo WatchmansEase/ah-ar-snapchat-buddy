@@ -3,6 +3,9 @@ import ConsentPopup from "./popup";
 import CameraComponent from "./CameraComponent";
 import Details from "./details";
 import ResetButton from "./ResetButton";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./toast.css"
 import "./App.css";
 
 const App = () => {
@@ -47,6 +50,7 @@ const App = () => {
 
   return (
     <div>
+      <ToastContainer position="top-center" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
       {!hasAgreed ? (
         <ConsentPopup onAgree={handleAgreement} />
       ) : showThankYou ? (

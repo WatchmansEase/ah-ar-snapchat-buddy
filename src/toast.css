@@ -1,0 +1,32 @@
+
+.Toastify__toast--success {
+    background-color: #4CAF50; /* Green background for success */
+    color: white; /* White text */
+    font-size: 4vw; /* Adjust font size */
+  }
+  
+  .Toastify__toast--error {
+    background-color: #eb2142; /* Red background for error */
+    color: white; /* White text */
+    font-size: 4vw;
+    position: absolute;
+    
+  }
+  
+  /* Custom styling for the container */
+  .Toastify__toast-container {
+    top: 35vh; /* Adjust position */
+    right: 0;
+    width: auto;
+  }
+  
+  /* Customize the close button */
+  .Toastify__close-button {
+    color: white;
+  }
+  
+  /* Customize the progress bar */
+  .Toastify__progress-bar {
+    background-color: white; /* White progress bar */
+  }
+  
