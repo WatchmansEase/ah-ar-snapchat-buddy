@@ -1,72 +1,61 @@
-
-
-
 body {
-    /* background-image: url('assets/backgrounds/4x/Asset 6@4x.png'); */
-    background-size: contain; /* Ensure the background image fits */
-    background-position: center;
-    background-repeat: no-repeat;
-    margin: 0;
-    height: 100vh;
-    overflow: hidden; 
-  }
-  
+  /* background-image: url('assets/backgrounds/4x/Asset 6@4x.png'); */
+  background-size: contain; /* Ensure the background image fits */
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
 .continue-button {
-   
-   
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
+  border: none;
+  font-size: 16px;
 }
 @supports (-webkit-touch-callout: none) {
-    .camera-view {
-      transform: rotate(0deg) !important;
-    }
+  .camera-view {
+    transform: rotate(0deg) !important;
   }
-
+}
 
 .back-button {
-    
-    font-size: 16px;
-    margin-top: 20px;
+  font-size: 16px;
+  margin-top: 20px;
 }
 
 @media (max-width: 600px) {
-    .capture-button {
-        font-size: 16px;
-        padding: 62px 24px; 
-    }
+  .capture-button {
+    font-size: 16px;
+    padding: 62px 24px;
+  }
 
-    .back-button {
-        font-size: 14px;
-        
-    }
+  .back-button {
+    font-size: 14px;
+  }
 }
-
 
 .button-container {
-    position: absolute;
-    bottom: 51px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 111px;
-    z-index: 5;
-    align-items: baseline;
+  position: absolute;
+  bottom: 24vh;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20vw;
+  z-index: 5;
+  align-items: baseline;
 }
 
-
-
 @media (max-width: 600px) {
-    .capture-button {
-        font-size: 16px;
-        padding: 62px 24px; 
-        z-index: -60;
-    }}
-    @media (max-width: 760px) {
-        .capture-button {
-            font-size: 16px;
-            padding: 62px 24px; 
-            z-index: -60;
-        }
+  .capture-button {
+    font-size: 16px;
+    padding: 62px 24px;
+    z-index: -60;
+  }
+}
+@media (max-width: 760px) {
+  .capture-button {
+    font-size: 16px;
+    padding: 62px 24px;
+    z-index: -60;
+  }
 }

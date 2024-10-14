@@ -9,7 +9,7 @@ const CaptureControls = ({ onCapture }) => {
         className="capture-button"
         onClick={onCapture}
         style={{
-          cursor: "pointer",
+          // cursor: "pointer",
           width: "100px",
           height: "100px",
         }}

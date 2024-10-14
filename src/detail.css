@@ -34,7 +34,6 @@
   left: 45vh;
   bottom: 29vh;
   transform: translate(-50%);
-  cursor: pointer;
   outline: none;
   width: 10%;
 }
@@ -131,7 +130,6 @@
     left: 39vh;
     bottom: 16vh;
     transform: translate(-50%);
-    cursor: pointer;
     outline: none;
   }
   img {
