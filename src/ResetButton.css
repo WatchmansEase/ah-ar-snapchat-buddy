@@ -32,7 +32,7 @@
 img .restart-button {
   width: 20vh;
   height: 20vh;
-  cursor: pointer;
+  /*  */
   height: 100%;
   width: 100%;
   outline: none;
@@ -44,9 +44,7 @@ img .restart-button {
   }
   .restart-button {
     width: 20px;
-    cursor: pointer;
     margin-top: 10%;
-    cursor: pointer;
     outline: none;
   }
 }
