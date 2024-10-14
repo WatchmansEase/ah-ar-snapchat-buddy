@@ -1,92 +1,89 @@
 .image-preview {
-    object-fit: cover;
-    /* Adjusts the image to cover the container while maintaining aspect ratio */
-   height: 100vh;
- 
-    /* Add subtle border-radius for a smoother look */
+  object-fit: cover;
+  /* Adjusts the image to cover the container while maintaining aspect ratio */
+  height: 100vh;
+
+  /* Add subtle border-radius for a smoother look */
 }
 
 .image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    /* Full height container to ensure the image covers the available space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* Full height container to ensure the image covers the available space */
 
-    position: relative;
-    /* Ensures buttons are placed over the image */
+  position: relative;
+  /* Ensures buttons are placed over the image */
 }
 
 .button-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    /* Increased gap for better spacing */
-    position: absolute;
-    bottom: 40px;
-    width: 100%;
-    /* Ensures buttons take the entire width */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  /* Increased gap for better spacing */
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  /* Ensures buttons take the entire width */
 }
 
 .button-container img {
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
 }
 
 .button-container img:hover {
-    transform: scale(1.1);
-    /* Slightly scale the button on hover */
+  transform: scale(1.1);
+  /* Slightly scale the button on hover */
 }
 
 .back-button,
 .share-button,
 .continue-button {
-    width: 70px;
-    height: 70px;
+  width: 70px;
+  height: 70px;
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-    .poweredby-image{
-        
-            position: absolute;  /* Position relative to the .image-container */
-            bottom: 185px;        /* Adjust to place it at the bottom */
-            right: 161px;         /* Adjust to place it in the right corner */
-            width: 93px;         /* Adjust the size of the image */
-            height: auto;
-            z-index: 5;          /* Ensure it's above the image-preview but below the buttons if needed */
-        
-    }
-   
-    .overlay-image-preview-2{
-        bottom:100px;
-    }
-   
+  .poweredby-image {
+    position: absolute; /* Position relative to the .image-container */
+    bottom: 185px; /* Adjust to place it at the bottom */
+    right: 161px; /* Adjust to place it in the right corner */
+    width: 93px; /* Adjust the size of the image */
+    height: auto;
+    z-index: 5; /* Ensure it's above the image-preview but below the buttons if needed */
+  }
 
-    .button-container img {
-        width: 70px;
-        height: 70px;
-    }
+  .overlay-image-preview-2 {
+    bottom: 100px;
+  }
 
-    .button-container {
-        gap: 25px;
-        bottom: 50px;
-    }
+  .button-container img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .button-container {
+    gap: 25px;
+    bottom: 50px;
+  }
 }
 
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
-    .image-preview {
-        border-radius: 20px;
-    }
+  .image-preview {
+    border-radius: 20px;
+  }
 
-    .button-container img {
-        width: 80px;
-        height: 80px;
-    }
+  .button-container img {
+    width: 80px;
+    height: 80px;
+  }
 
-    .button-container {
-        gap: 30px;
-        bottom: 60px;
-    }
+  .button-container {
+    gap: 30px;
+    bottom: 60px;
+  }
 }

@@ -12,15 +12,21 @@
   background-repeat: no-repeat;
   height: 100vh;
   width: 100vh;
-  justify-content: center;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  text-align: center;
   color: white;
+  text-align: center;
 }
 
 .thankyou-container h1 {
-  font-size: 80px;
+  font-size: 60px;
+}
+
+.restart-button {
+  width: 20%;
+  margin-top: 15%;
 }
 
 img .restart-button {
@@ -37,6 +43,7 @@ img .restart-button {
     color: rgb(255, 255, 255);
   }
   .restart-button {
+    width: 20px;
     cursor: pointer;
     margin-top: 10%;
     cursor: pointer;
