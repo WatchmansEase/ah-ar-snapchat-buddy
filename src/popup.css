@@ -22,22 +22,40 @@
 .popup-first {
   width: 800px;
 }
-.popup img {
+.pop-first-title {
+  font-size: 38px;
+  margin: 0px;
+}
+.pop-second-title {
+  font-size: 34px;
+  margin: 0px;
+}
+.pop-third-title {
+  font-size: 30px;
+  font-weight: 400;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.popup-image {
   margin-top: 10%;
+  margin-bottom: 10%;
+  width: 35%;
 }
 
 .popup {
   flex-grow: 1;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   position: fixed;
-  top: 50%;
+  top: 40%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -40%);
   color: white;
   z-index: 1000;
   text-align: center;
   align-items: center;
+  width: 80%;
 }
 
 .button-container {
@@ -48,6 +66,28 @@
 .button {
   padding: 10px 20px;
   font-size: 16px;
+}
+
+.checkbox-row-one,
+.checkbox-row-two {
+  display: flex;
+  font-size: 30px;
+}
+.checkbox-row-one input,
+.checkbox-row-two input {
+  width: 25px;
+  height: 25px;
+  margin-top: 12px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.checkbox-row-one h4,
+.checkbox-row-two h4 {
+  text-align: left;
+  margin-left: 3%;
+  margin-top: 0px;
+  font-weight: 500;
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -70,50 +110,20 @@
   .popup-h4-input input {
     width: 50px;
   }
-  .popup-h4-input-2-1 {
-    text-align: start;
-    margin-bottom: 10%;
-    display: flex;
-    gap: 5px;
-    justify-content: space-around;
-  }
-  .popup-h4-input-2-2 {
-    text-align: start;
-    display: flex;
-    justify-content: flex-start;
-    gap: 30px;
-    margin-bottom: 10%;
-  }
-  .popup-h4-input-2 input {
-    width: 20px;
-  }
-  .popup-h4-input-2 {
-    margin-top: 10%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .popup-img-flex {
-    margin-top: 10%;
-    width: 180%;
-    display: flex;
-    justify-content: center;
-    outline: none;
-  }
+
   .popup {
     max-width: 100%;
     max-height: 100%;
     font-size: 18px;
+    width: 80%;
   }
   .pop-first-title {
-    font-size: 35px;
+    font-size: 38px;
+    margin: 0px;
   }
   .pop-second-title {
     font-size: 34px;
-  }
-  .popup img {
-    width: 30%;
-    margin-top: 5%;
+    margin: 0px;
   }
   .popup-input-text {
     text-align: start;

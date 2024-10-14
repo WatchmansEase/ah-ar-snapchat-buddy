@@ -169,7 +169,7 @@ const Details = ({ capturedImage, onReset, newsLetter }) => {
           alt="submit"
           onClick={handleSubmit}
           style={{
-            width: "100px",
+            width: "150px",
           }}
         />
       </div>
