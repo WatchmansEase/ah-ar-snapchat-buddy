@@ -46,11 +46,11 @@ body {
 
 .button-container {
     position: absolute;
-    bottom: 51px;
+    bottom: 24vh;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 111px;
+    gap: 20vw;
     z-index: 5;
     align-items: baseline;
 }

@@ -1,83 +1,98 @@
 .camera-container {
-    display: flex;
     position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+    overflow: scroll;
+    background-image: url("assets/backgrounds/4x/Asset 6@4x.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  display: flex;
+  position: relative;
+    width:100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.capture-button{
+    height: 10vh;
+    width: auto;
 }
 .capture-button-container {
+    
     position: absolute;
-    bottom: 50px;
+    height: 20vh;
+    width: 20vh;
+    bottom: 20vh;
     left: 50%;
     transform: translateX(-50%);
     color: black;
     border: none;
-    padding: 15px 30px;
-    border-radius: 50px;
-    font-size: 16px;
-    cursor: pointer;
     z-index: 1;
 }
 .overlay-image {
     position: absolute;
-    left: 50%;  /* Center horizontally */
-    transform: translateX(-50%);  /* Adjust to perfectly center it */
-    bottom: 4vh;  /* Distance from the bottom of the viewport */
-    width: 141px;  /* Fixed width for the image */
-    height: auto;  /* Maintain aspect ratio */
-    z-index: 5;  /* Ensure it stays above the canvas */
-    border: 2px solid yellow;  /* Keep the yellow border */
+    height: auto;
+    z-index: 5;
+     /* Keep the yellow border */
 }
 
 .canvas-visible {
-    display: block;
-    background-color: rgba(211, 211, 211, 0);
-    /* clip-path: polygon(15% 0%, 92% 0%, 85% 100%, 9% 100%); */
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    right:10vh;
+    top:14vh;
+    clip-path: polygon(
+        5% 0,
+        100% 0,
+        100% 53%,
+        97% 53%,
+        96% 100%,
+        0 100%,
+        0 48%,
+        4% 48%
+      );
+
+  display: block;
+  background-color: rgba(211, 211, 211, 0);
+  
+  width: 44vh;
+  height: 55vh;
 }
 
 .canvas-hidden {
-    display: none;
+  display: none;
 }
 
 canvas {
-    overflow: hidden;
-    width: 100vw;
-    height: 75vh;
-    object-fit: cover;
-    z-index: 1;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 75vh;
+  object-fit: cover;
+  z-index: 1;
+  display: block;
+  position: absolute;
+  
 }
 
 /* Media Queries */
 
 /* For tablets (768px - 1024px) */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-    .camera-container {
-       
-        right: 0px;
-        height: 100vh;
-    }
-   
-    /* .canvas-visible {
+@media only screen and (min-width: 200px) and (max-width: 1024px) {
+  .camera-container {
+    right: 0;
+    height: 100vh;
+  }
+
+  /* .canvas-visible {
         clip-path: polygon(17% 0%, 86% 0%, 78% 100%, 12% 100%);
     } */
-    canvas {
-        width: 100vw;
-        height: 70vh;
-    }
-   
-    .overlay-image {
-        border: 2px solid green;
-        width: 131px;
-        right: 3vh;
-        bottom: 3vh;
-    }
-    
-    
+  canvas {
+    width: 100vw;
+    height: 70vh;
+  }
+  .capture-button{
+    height:10vh;
+  }
+  .overlay-image {
+    width: 18vw;
+    right: 13vh;
+    bottom: 33vh;
+  }
 }
-
