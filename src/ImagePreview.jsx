@@ -1,11 +1,29 @@
-import React, { useState } from "react";
-import "./ImagePreview.css";
 const ImagePreview = ({ capturedImage, onBack, onContinue }) => {
+  const handleBack = async () => {
+    try {
+      await onBack();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleContinue = async () => {
+    try {
+      await onContinue();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <>
-      {" "}
       <div className="image-container">
-        <img className="image-preview" src={capturedImage} alt="Captured" />
+        <img
+          className="image-preview"
+          src={capturedImage}
+          alt="Captured"
+          loading="lazy"
+        />
         <div className="poweredby">
           <div
             className="mukul"
@@ -27,19 +45,19 @@ const ImagePreview = ({ capturedImage, onBack, onContinue }) => {
                 src="\buttons\fretryAsset 13.png"
                 alt="retry"
                 className="back-button"
-                onClick={onBack}
+                onClick={handleBack}
               />
               <img
                 src="\buttons\fcontinueAsset 14.png"
                 alt="Continue"
                 className="continue-button"
-                onClick={onContinue}
+                onClick={handleContinue}
               />
             </div>
           </div>
           <img
             src="\buttons\Dark BG.png"
-            alt="Overlaytr Image"
+            alt="Overlay Image"
             className="poweredby-image"
           />
         </div>
