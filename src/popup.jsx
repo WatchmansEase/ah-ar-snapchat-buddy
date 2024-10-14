@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./popup.css"; // Import the popup.css file
+import Toast, { showErrorToast } from "./toast";
 
 const ConsentPopup = ({ onAgree }) => {
   const [isChecked, setIsChecked] = useState(false);
@@ -17,7 +18,7 @@ const ConsentPopup = ({ onAgree }) => {
       onAgree();
       setIsVisible(false);
     } else {
-      alert("You must agree to the terms to proceed.");
+      showErrorToast("You must agree to the terms to proceed.");
     }
   };
 
