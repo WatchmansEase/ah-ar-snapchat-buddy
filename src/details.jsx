@@ -14,24 +14,31 @@ const Details = ({ capturedImage, onReset, newsLetter }) => {
 
   const validateForm = () => {
     if (!name.trim()) {
-      alert("Please enter your name.");
+      // alert("Please enter your name.");
+      alert("Παρακαλώ εισάγετε το όνομά σας.");
       return false;
     } else if (!nameRegex.test(name)) {
-      alert("Name cannot contain digits or symbols.");
+      alert("Το όνομα δεν μπορεί να περιέχει αριθμούς ή σύμβολα.");
       return false;
     }
     if (!number.trim()) {
-      alert("Please enter your phone number.");
+      // alert("Please enter your phone number.");
+      alert("Παρακαλώ εισάγετε τον αριθμό τηλεφώνου σας.");
+
       return false;
     } else if (!phoneNumberRegex.test(number)) {
-      alert("Please enter a valid phone number.");
+      // alert("Please enter a valid phone number.");
+      alert("Παρακαλώ εισάγετε έναν έγκυρο αριθμό τηλεφώνου.");
+
       return false;
     }
     if (!email.trim()) {
-      alert("Please enter your email.");
+      // alert("Please enter your email.");
+      alert("Παρακαλώ εισάγετε το email σας.");
       return false;
     } else if (!emailRegex.test(email)) {
-      alert("Please enter a valid email address.");
+      // alert("Please enter a valid email address.");
+      alert("Παρακαλώ εισάγετε μια έγκυρη διεύθυνση email.");
       return false;
     }
     return true;
@@ -99,7 +106,7 @@ const Details = ({ capturedImage, onReset, newsLetter }) => {
       setNumber("");
       setShowThankYou(true);
       // Show Thank You message after form submission without waiting for email to finish
-      alert("Successfully registered! Your email will be sent shortly.");
+      alert("Επιτυχής εγγραφή! Το email σας θα σταλεί σύντομα.");
       return true;
     } catch (error) {
       console.error("Error:", error);
@@ -166,7 +173,7 @@ const Details = ({ capturedImage, onReset, newsLetter }) => {
       <div className="submit-button">
         <img
           src="/buttons/dheeraj.png"
-          alt="submit"
+          alt="Υποβολή"
           onClick={handleSubmit}
           style={{
             width: "150px",
