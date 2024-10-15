@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 import { bootstrapCameraKit } from "@snap/camera-kit";
 import LiveCamera from "./LiveCamera";
 import CaptureControls from "./CaptureCamera";
-import html2canvas from "html2canvas";
 import ImagePreview from "./ImagePreview";
 import { toPng } from "html-to-image";
 import "./snapstyle.css";
@@ -18,7 +17,6 @@ const CameraComponent = ({
   const canvasRef = useRef(null);
   const cameraContainerRef = useRef(null);
   const mediaStreamRef = useRef(null);
-  const [email, setEmail] = useState("");
   const [error, setError] = useState(null);
   const [isCameraReady, setIsCameraReady] = useState(false);
   const [capturedImageUrl, setCapturedImageUrl] = useState(null); // State for captured image URL
@@ -88,7 +86,7 @@ const CameraComponent = ({
           "f029c812-af38-419f-a7dc-5c953e78ea98"
         );
         await session.applyLens(lens);
-        console.log("Lens applied successfully");
+        console.log("lens applied successfully");
       } catch (error) {
         console.error("Failed to apply lens:", error);
       }
@@ -148,44 +146,6 @@ const CameraComponent = ({
     }
   };
 
-  const toggleCamera = async () => {
-    setCameraFacingMode((prevMode) =>
-      prevMode === "environment" ? "user" : "environment"
-    );
-    if (sessionRef.current) {
-      const mediaStream = mediaStreamRef.current;
-      if (mediaStream) {
-        mediaStream.getTracks().forEach((track) => track.stop());
-      }
-      await sessionRef.current.destroy();
-      sessionRef.current = null;
-    }
-    setupCamera();
-  };
-
-  const shareImage = async (emailAddress) => {
-    if (capturedImage) {
-      const blob = await fetch(capturedImage).then((res) => res.blob());
-      const file = new File([blob], "captured-image.png", {
-        type: "image/png",
-      });
-
-      if (navigator.share) {
-        try {
-          await navigator.share({
-            title: "Check out this image!",
-            text: `Here is the image I captured. Send it to: ${emailAddress}`,
-            files: [file],
-            url: window.location.href,
-          });
-          console.log("Image shared successfully");
-        } catch (error) {
-          console.error("Error sharing the image:", error);
-        }
-      }
-    }
-  };
-
   return (
     <div>
       {error && <div className="error-message">{error}</div>}
@@ -193,7 +153,6 @@ const CameraComponent = ({
         <ImagePreview
           capturedImage={capturedImage}
           onBack={onBackToCamera}
-          onShare={() => shareImage(email)}
           onContinue={() => {
             onContinue();
           }}
@@ -201,10 +160,7 @@ const CameraComponent = ({
       ) : (
         <div ref={cameraContainerRef} className="camera-container">
           <LiveCamera canvasRef={canvasRef} isCameraReady={isCameraReady} />
-          <CaptureControls
-            onCapture={handleCaptureImage}
-            onToggleCamera={toggleCamera}
-          />
+          <CaptureControls onCapture={handleCaptureImage} />
         </div>
       )}
     </div>

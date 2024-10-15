@@ -1,42 +1,23 @@
 .image-preview {
   object-fit: cover;
-  /* Adjusts the image to cover the container while maintaining aspect ratio */
   height: 100vh;
-
-  /* Add subtle border-radius for a smoother look */
 }
-/* .mukul {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 4;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    width: 80%;
-  } */
+
 
 .image-container {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  /* Full height container to ensure the image covers the available space */
 
   position: relative;
-  /* Ensures buttons are placed over the image */
 }
 
 .button-container {
   display: flex;
   justify-content: center;
-  /* gap: 20px; */
-  /* Increased gap for better spacing */
   position: absolute;
-  /* bottom: 40px; */
   width: 100%;
-  /* Ensures buttons take the entire width */
+
 }
 
 .button-container img {
@@ -47,51 +28,8 @@
 
 .button-container img:hover {
   transform: scale(1.1);
-  /* Slightly scale the button on hover */
 }
 
-.back-button,
-.share-button,
 
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .poweredby-image {
-    position: absolute; 
-    /* bottom: 185px; 
-    right: 161px; 
-    width: 93px; 
-     */
-    height: auto;
-    z-index: 5; /* Ensure it's above the image-preview but below the buttons if needed */
-  }
 
-  .overlay-image-preview-2 {
-    /* bottom: 100px; */
-  }
-
-  .button-container img {
-    /* width: 70px;
-    height: 70px; */
-  }
-
-  .button-container {
-    /* gap: 25px;
-    bottom: 50px; */
-  }
-}
-
-@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
-  .image-preview {
-    /* border-radius: 20px; */
-  }
-
-  .button-container img {
-    /* width: 80px;
-    height: 80px; */
-  }
-
-  .button-container {
-    /* gap: 30px;
-    bottom: 60px; */
-  }
-}

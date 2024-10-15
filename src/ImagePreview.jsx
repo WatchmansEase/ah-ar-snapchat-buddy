@@ -1,13 +1,7 @@
 import React, { useState } from "react";
 import "./ImagePreview.css";
-const ImagePreview = ({ capturedImage, onBack, onContinue, onShare }) => {
-  const handleShare = () => {
-    if (capturedImage) {
-      onShare();
-    } else {
-      alert("No image available to share.");
-    }
-  };
+const ImagePreview = ({ capturedImage, onBack, onContinue}) => {
+ 
 
   return (
     <>
