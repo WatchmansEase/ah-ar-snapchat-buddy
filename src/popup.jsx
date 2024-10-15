@@ -45,7 +45,7 @@ const ConsentPopup = ({ onAgree }) => {
               <h4>
                 Αποδέχομαι τους{" "}
                 <a
-                  href="https://www.dei.gr/en/terms-of-use/"
+                  href="https://www.ppcgroup.com/el/omilos-dei/draseis-synergasies/myhome-4students-diagonismos/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
