@@ -1,35 +1,17 @@
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: auto;
-  min-height: 100vh; /* Ensure the content fills at least the full viewport */
-  overflow-x: hidden; /* Prevent horizontal overflow */
-}
 #root {
   background-image: url("assets/backgrounds/4x/Asset 6@4x.png");
-  background-size: contain;
-  background-position: center;
+  background-size: cover;
+  background-position: bottom -115% center;
   background-repeat: no-repeat;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  display: flex; /* Optional: To center contents */
+  display: flex;
   justify-content: center;
-  min-height: 100vh; /* Ensures the root fills at least the full viewport */
-  height: auto; /* Set height to auto for better responsiveness */
+  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
   text-align: center;
-  position: relative;
-}
-body {
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin: 0;
-  height: auto; /* Set height to auto */
-  min-height: 100vh; /* Ensure at least full viewport height */
-  overflow: hidden;
 }
 .logo {
   height: 6em;
@@ -37,7 +19,6 @@ body {
   will-change: filter;
   transition: filter 300ms;
   z-index: 2;
-
   .logo:hover {
     filter: drop-shadow(0 0 2em #646cffaa);
   }
