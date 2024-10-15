@@ -167,7 +167,7 @@ const Details = ({ capturedImage, onReset, newsLetter }) => {
       <div className="submit-button">
         <img
           src="/buttons/dheeraj.png"
-          alt="submit"
+          alt="Υποβολή"
           onClick={handleSubmit}
           style={{
             width: "150px",
