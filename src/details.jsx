@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ResetButton from "./ResetButton";
 import "./detail.css";
 import axios from "axios";
-import Toast, { showSuccessToast, showErrorToast } from "./toast";
+import ToastProvider, { showToast } from "./toast";
 
 const Details = ({ capturedImage, onReset, newsLetter }) => {
   const [name, setName] = useState("");
@@ -15,24 +15,24 @@ const Details = ({ capturedImage, onReset, newsLetter }) => {
 
   const validateForm = () => {
     if (!name.trim()) {
-      showErrorToast("Please enter your name.");
+      showToast("Please enter your name.");
       return false;
     } else if (!nameRegex.test(name)) {
-      showErrorToast("Name cannot contain digits or symbols.");
+      showToast("Name cannot contain digits or symbols.");
       return false;
     }
     if (!number.trim()) {
-      showErrorToast("Please enter your phone number.");
+      showToast("Please enter your phone number.");
       return false;
     } else if (!phoneNumberRegex.test(number)) {
-      showErrorToast("Please enter a valid phone number.");
+      showToast("Please enter a valid phone number.");
       return false;
     }
     if (!email.trim()) {
-      showErrorToast("Please enter your email.");
+      showToast("Please enter your email.");
       return false;
     } else if (!emailRegex.test(email)) {
-      showErrorToast("Please enter a valid email address.");
+      showToast("Please enter a valid email address.");
       return false;
     }
     return true;
@@ -100,9 +100,7 @@ const Details = ({ capturedImage, onReset, newsLetter }) => {
       setNumber("");
       setShowThankYou(true);
       // Show Thank You message after form submission without waiting for email to finish
-      showSuccessToast(
-        "Successfully registered! Your email will be sent shortly."
-      );
+      showToast("Successfully registered! Your email will be sent shortly.");
       return true;
     } catch (error) {
       console.error("Error:", error);
