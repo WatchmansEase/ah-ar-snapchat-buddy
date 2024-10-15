@@ -4,7 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const ToastProvider = () => <ToastContainer />;
 export const showToast = (message) => {
-  toast(message);
+  toast(<div style={{ fontWeight: "bold" }}>{message}</div>);
 };
 
 export default ToastProvider;

@@ -15,24 +15,24 @@ const Details = ({ capturedImage, onReset, newsLetter }) => {
 
   const validateForm = () => {
     if (!name.trim()) {
-      showToast("Please enter your name.");
+      showToast("Παρακαλώ  εισάγετε το όνομα σας.");
       return false;
     } else if (!nameRegex.test(name)) {
-      showToast("Name cannot contain digits or symbols.");
+      showToast("Το όνομα δεν μπορεί να περιέχει ψηφία ή σύμβολα.");
       return false;
     }
     if (!number.trim()) {
-      showToast("Please enter your phone number.");
+      showToast("Παρακαλώ εισάγετε το τηλέφωνο σας.");
       return false;
     } else if (!phoneNumberRegex.test(number)) {
-      showToast("Please enter a valid phone number.");
+      showToast("Ο αριθμός τηλεφώνου πρέπει να είναι μεταξύ 10-15 ψηφίων.");
       return false;
     }
     if (!email.trim()) {
-      showToast("Please enter your email.");
+      showToast("Παρακαλώ εισάγετε το email σας.");
       return false;
     } else if (!emailRegex.test(email)) {
-      showToast("Please enter a valid email address.");
+      showToast("Εισαγάγετε μια έγκυρη διεύθυνση email.");
       return false;
     }
     return true;
@@ -100,7 +100,9 @@ const Details = ({ capturedImage, onReset, newsLetter }) => {
       setNumber("");
       setShowThankYou(true);
       // Show Thank You message after form submission without waiting for email to finish
-      showToast("Successfully registered! Your email will be sent shortly.");
+      showToast(
+        "Η εγγραφή σας ήταν επιτυχής. Το email σας θα σταλεί σύντομα. "
+      );
       return true;
     } catch (error) {
       console.error("Error:", error);

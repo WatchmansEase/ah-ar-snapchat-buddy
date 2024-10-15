@@ -36,7 +36,7 @@ const App = () => {
   const handleBackToCamera = () => {
     setCapturedImage(null);
     setShowDetails(false);
-    console.log("its' triggering badck to camera");
+    console.log("It's triggering back to camera");
   };
 
   const resetApp = () => {

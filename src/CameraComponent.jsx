@@ -88,7 +88,7 @@ const CameraComponent = ({
           "f029c812-af38-419f-a7dc-5c953e78ea98"
         );
         await session.applyLens(lens);
-        console.log("lens applied successfully");
+        console.log("Lens applied successfully");
       } catch (error) {
         console.error("Failed to apply lens:", error);
       }

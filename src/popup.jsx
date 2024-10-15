@@ -18,7 +18,7 @@ const ConsentPopup = ({ onAgree }) => {
       onAgree();
       setIsVisible(false);
     } else {
-      showToast("You must agree to the terms to proceed.");
+      showToast("Πρέπει να συμφωνήσετε με τους όρους για να προχωρήσετε.");
     }
   };
 
