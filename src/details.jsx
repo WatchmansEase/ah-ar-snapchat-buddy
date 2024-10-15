@@ -38,25 +38,37 @@ const Details = ({ capturedImage, onReset, newsLetter }) => {
     return true;
   };
 
+  const compressImage = async (base64Image, quality = 0.7) => {
+    return new Promise((resolve) => {
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+        canvas.width = img.width;
+        canvas.height = img.height;
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        resolve(canvas.toDataURL("image/jpeg", quality));
+      };
+      img.src = base64Image;
+    });
+  };
+
   const handleSubmit = async () => {
-    // Call validateForm() to check if the inputs are valid
     const isFormValid = validateForm();
     if (!isFormValid) {
-      return; // Stop execution if the form is not valid
+      return;
     }
-
-    const convertToBase64 = (blob) => {
-      return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(blob);
-        reader.onloadend = () => resolve(reader.result);
-        reader.onerror = (error) => reject(error);
-      });
-    };
 
     try {
       const blob = await fetch(capturedImage).then((res) => res.blob());
-      const base64Image = await convertToBase64(blob);
+      let base64Image = await new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.onloadend = () => resolve(reader.result);
+        reader.readAsDataURL(blob);
+      });
+
+      // Compress the image
+      base64Image = await compressImage(base64Image, 0.7); // Adjust quality as needed
 
       // Send user details to the Backend API
       await axios.post(
@@ -74,7 +86,7 @@ const Details = ({ capturedImage, onReset, newsLetter }) => {
         }
       );
 
-      // Send email asynchronously but don't wait for it to complete before showing feedback
+      // Send email with compressed image
       axios
         .post(
           "https://vercel-serverless-func-seven.vercel.app/api/send-email-image",
@@ -99,7 +111,6 @@ const Details = ({ capturedImage, onReset, newsLetter }) => {
       setEmail("");
       setNumber("");
       setShowThankYou(true);
-      // Show Thank You message after form submission without waiting for email to finish
       showToast(
         "Η εγγραφή σας ήταν επιτυχής. Το email σας θα σταλεί σύντομα. "
       );
@@ -111,7 +122,7 @@ const Details = ({ capturedImage, onReset, newsLetter }) => {
   };
 
   if (showThankYou) {
-    return <ResetButton onReset={onReset} />; // Pass onReset to ResetButton
+    return <ResetButton onReset={onReset} />;
   }
 
   return (

@@ -6,6 +6,7 @@ import html2canvas from "html2canvas";
 import ImagePreview from "./ImagePreview";
 import { toPng } from "html-to-image";
 import "./snapstyle.css";
+import ToastProvider, { showToast } from "./toast";
 
 const CameraComponent = ({
   onImageCapture,
@@ -123,25 +124,24 @@ const CameraComponent = ({
   }, [capturedImage, setupCamera]);
 
   const handleCaptureImage = async () => {
-    if (cameraContainerRef.current) {
+    // Access the 'root' div from the index.html
+    const rootElement = document.getElementById("root");
+    if (rootElement) {
       try {
-        const dataUrl = await toPng(cameraContainerRef.current, {
+        const dataUrl = await toPng(rootElement, {
           cacheBust: true,
           useCors: true,
           filter: (node) => {
-            if (
-              node.tagName === "DIV" &&
-              node.classList.contains("capture-button-container")
-            ) {
+            if (node.classList.contains("capture-button-container")) {
               return false;
             }
             return true;
           },
         });
-
-        setCapturedImageUrl(dataUrl); // Store the captured image URL
+        setCapturedImageUrl(dataUrl);
         onImageCapture(dataUrl);
       } catch (error) {
+        showToast("Αποτυχία λήψης εικόνας. Δοκιμάστε ξανά.");
         console.error("Error capturing image:", error);
         setError("Failed to capture image. Please try again.");
       }
