@@ -26,19 +26,17 @@ const App = () => {
   const handleContinue = () => {
     if (capturedImage) {
       // Ensure capturedImage is not null
-      console.log("Μετάβαση στη σελίδα Λεπτομερειών");
+      console.log("Navigating to Details page");
       setShowDetails(true);
     } else {
-      console.error(
-        "Δεν υπάρχει διαθέσιμη καταγεγραμμένη εικόνα για να συνεχίσετε."
-      );
+      console.error("No captured image available to continue.");
     }
   };
 
   const handleBackToCamera = () => {
     setCapturedImage(null);
     setShowDetails(false);
-    console.log("Επιστρέφει στην κάμερα.");
+    console.log("It's triggering back to camera");
   };
 
   const resetApp = () => {

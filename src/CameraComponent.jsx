@@ -33,10 +33,10 @@ const CameraComponent = ({
         return permissionState;
       } catch (error) {
         console.error(
-          "Σφάλμα κατά την αίτηση άδειας Κίνησης και Προσανατολισμού:", // “Error requesting Motion and Orientation permission:”
+          "Error requesting Motion and Orientation permission:",
           error
         );
-        return "Σφάλμα"; //error
+        return "error";
       }
     }
     return "granted";
@@ -48,8 +48,9 @@ const CameraComponent = ({
 
     const permissionState = await requestMotionPermission();
     if (permissionState !== "granted") {
-      setError();
-      // "Motion and Orientation permission is required for this feature to work."
+      setError(
+        "Motion and Orientation permission is required for this feature to work."
+      );
       return;
     }
 
@@ -87,16 +88,15 @@ const CameraComponent = ({
           "f029c812-af38-419f-a7dc-5c953e78ea98"
         );
         await session.applyLens(lens);
-        console.log("lens applied successfully");
+        console.log("Lens applied successfully");
       } catch (error) {
         console.error("Failed to apply lens:", error);
       }
     } catch (error) {
-      // console.error("Failed to initialize camera:", error);
-      console.error("Failed to Απέτυχε η αρχικοποίηση της κάμερας:", error);
-      setError();
-      // "Failed to initialize camera. Please check your permissions and try again."
-      ("Απέτυχε η αρχικοποίηση της κάμερας. Παρακαλώ ελέγξτε τις άδειές σας και δοκιμάστε ξανά.");
+      console.error("Failed to initialize camera:", error);
+      setError(
+        "Failed to initialize camera. Please check your permissions and try again."
+      );
     }
   }, [cameraFacingMode]);
 
