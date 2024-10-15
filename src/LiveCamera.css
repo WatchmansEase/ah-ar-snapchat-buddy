@@ -70,6 +70,7 @@ canvas {
 /* For tablets (768px - 1024px) */
 @media only screen and (min-width: 200px) and (max-width: 1024px) {
   .camera-container {
+    
     right: 0;
     height: 100vh;
   }
