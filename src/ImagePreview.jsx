@@ -15,10 +15,7 @@ const ImagePreview = ({ capturedImage, onBack, onContinue, onShare }) => {
       <div className="image-container">
         <img className="image-preview" src={capturedImage} alt="Captured" />
         <div className="poweredby">
-          <div
-            className="mukul"
-          
-          >
+          <div className="mukul">
             <div className="button-container">
               <img
                 src="\buttons\fretryAsset 13.png"

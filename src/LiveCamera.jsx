@@ -16,7 +16,7 @@ const LiveCamera = ({ canvasRef, isCameraReady }) => {
       {!isCameraReady && (
         <div className="loading-overlay">
           <div className="loading-spinner"></div>
-          <div className="loading-text">Loading camera...</div>
+          <div className="loading-text"></div>
         </div>
       )}
     </div>

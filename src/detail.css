@@ -4,19 +4,6 @@
   font-weight: normal;
   font-style: normal;
 }
-.form-header {
-  background-image: url("assets/backgrounds/4x/Asset 6@4x.png");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  width: 100vh;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  color: white;
-}
 .sub-header {
   font-size: 20px;
   color: #000000;
@@ -31,14 +18,17 @@
 }
 .submit-button {
   position: relative;
-  left: 45vh;
-  bottom: 29vh;
-  transform: translate(-50%);
+  right: 2vh;
+  bottom: 24vh;
   outline: none;
-  width: 10%;
 }
-
-.form-header-inside {
+.form-container {
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
+  height: 95%; /* Full viewport height */
+}
+.form-header {
   clip-path: polygon(
     15% 0%,
     100% 0%,
@@ -49,10 +39,7 @@
     5% 45%,
     10% 45%
   );
-  right: -26vh;
   width: 47vh;
-  bottom: 3vh;
-  position: relative;
   height: 66vh;
   background-color: #d1c8c9;
   flex-direction: column;
@@ -83,7 +70,7 @@
     margin-bottom: 20px;
   }
 
-  .form-header-inside {
+  .form-header {
     clip-path: polygon(
       5% 0,
       100% 0,
@@ -94,7 +81,7 @@
       0 48%,
       4% 48%
     );
-    right: -28vh;
+    /* right: -28vh; */
     width: 44vh;
     position: relative;
     top: 14vh;

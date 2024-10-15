@@ -7,6 +7,13 @@ body {
   overflow-x: hidden; /* Prevent horizontal overflow */
 }
 #root {
+  background-image: url("assets/backgrounds/4x/Asset 6@4x.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
   display: flex; /* Optional: To center contents */
   justify-content: center;
   min-height: 100vh; /* Ensures the root fills at least the full viewport */
