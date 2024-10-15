@@ -100,7 +100,9 @@ const Details = ({ capturedImage, onReset, newsLetter }) => {
       setNumber("");
       setShowThankYou(true);
       // Show Thank You message after form submission without waiting for email to finish
-      showSuccessToast("Successfully registered! Your email will be sent shortly.");
+      showSuccessToast(
+        "Successfully registered! Your email will be sent shortly."
+      );
       return true;
     } catch (error) {
       console.error("Error:", error);
@@ -114,8 +116,8 @@ const Details = ({ capturedImage, onReset, newsLetter }) => {
 
   return (
     <>
-      <div className="form-header">
-        <div className="form-header-inside">
+      <div className="form-container">
+        <div className="form-header">
           <h2 className="detail-header">
             Συμμετοχή
             <br />

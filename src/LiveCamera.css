@@ -1,56 +1,52 @@
 .camera-container {
-    position: relative;
-    overflow: scroll;
-    background-image: url("assets/backgrounds/4x/Asset 6@4x.png");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  /* overflow: scroll; */
   display: flex;
   position: relative;
-    width:100vw;
+  width: 100vw;
   height: 100vh;
-  overflow: hidden;
 }
-.capture-button{
-    height: 10vh;
-    width: auto;
+.capture-button {
+  height: 10vh;
+  width: auto;
 }
 .capture-button-container {
-    position: absolute;
-    height: 20vh;
-    width: 20vh;
-    bottom: 20vh;
-    left: 50%;
-    transform: translateX(-50%);
-    color: black;
-    border: none;
-    z-index: 1;
+  position: absolute;
+  height: 20vh;
+  width: 20vh;
+  bottom: 20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  color: black;
+  border: none;
+  z-index: 1;
 }
 .overlay-image {
-    position: absolute;
-    height: auto;
-    z-index: 5;
-     /* Keep the yellow border */
+  position: absolute;
+  height: auto;
+  z-index: 5;
+  /* Keep the yellow border */
 }
 
 .canvas-visible {
-    position: absolute;
-    right:10vh;
-    top:14vh;
-    clip-path: polygon(
-        5% 0,
-        100% 0,
-        100% 53%,
-        97% 53%,
-        96% 100%,
-        0 100%,
-        0 48%,
-        4% 48%
-      );
+  position: absolute;
+  right: 10vh;
+  top: 14vh;
+  clip-path: polygon(
+    5% 0,
+    100% 0,
+    100% 53%,
+    97% 53%,
+    96% 100%,
+    0 100%,
+    0 48%,
+    4% 48%
+  );
 
   display: block;
   background-color: rgba(211, 211, 211, 0);
-  
+
   width: 44vh;
   height: 55vh;
 }
@@ -67,7 +63,6 @@ canvas {
   z-index: 1;
   display: block;
   position: absolute;
-  
 }
 
 /* Media Queries */
@@ -86,8 +81,8 @@ canvas {
     width: 100vw;
     height: 70vh;
   }
-  .capture-button{
-    height:10vh;
+  .capture-button {
+    height: 10vh;
   }
   .overlay-image {
     width: 18vw;
