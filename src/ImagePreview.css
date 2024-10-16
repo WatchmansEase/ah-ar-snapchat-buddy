@@ -57,12 +57,10 @@
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .poweredby-image {
     position: absolute; 
-    /* bottom: 185px; 
-    right: 161px; 
-    width: 93px; 
-     */
+    top:10vh;
+    right:4vh;
     height: auto;
-    z-index: 5; /* Ensure it's above the image-preview but below the buttons if needed */
+    z-index: 5; 
   }
 
   .overlay-image-preview-2 {

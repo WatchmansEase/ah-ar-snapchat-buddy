@@ -14,6 +14,11 @@ const ImagePreview = ({ capturedImage, onBack, onContinue, onShare }) => {
       {" "}
       <div className="image-container">
         <img className="image-preview" src={capturedImage} alt="Captured" />
+        <img
+          src="/buttons/Dark BG.png"
+          alt="Overlay Image"
+          className="overlay-image"
+        />
         <div className="poweredby">
           <div className="mukul">
             <div className="button-container">

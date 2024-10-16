@@ -132,7 +132,7 @@ const CameraComponent = ({
           cacheBust: true,
           useCors: true,
           filter: (node) => {
-            if (node.classList.contains("capture-button-container")) {
+            if (node.classList.contains("capture-button-container")|| node.classList.contains("overlay-image")) {
               return false;
             }
             return true;
