@@ -107,6 +107,26 @@ const Details = ({ capturedImage, onReset, newsLetter }) => {
           console.error("Error sending email:", error);
         });
 
+      // Send email with terms and conditions
+      axios
+        .post(
+          "https://vercel-serverless-func-seven.vercel.app/api/send-email-terms",
+          {
+            email: email,
+          },
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        )
+        .then((response) => {
+          console.log("Email terms sent:", response.data);
+        })
+        .catch((error) => {
+          console.error("Error sending terms email:", error);
+        });
+
       setName("");
       setEmail("");
       setNumber("");
