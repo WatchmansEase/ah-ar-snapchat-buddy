@@ -86,26 +86,26 @@ const Details = ({ capturedImage, onReset, newsLetter }) => {
         }
       );
 
-      // Send email with compressed image
-      axios
-        .post(
-          "https://vercel-serverless-func-seven.vercel.app/api/send-email-image",
-          {
-            email: email,
-            image: base64Image,
-          },
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        )
-        .then((response) => {
-          console.log("Email sent:", response.data);
-        })
-        .catch((error) => {
-          console.error("Error sending email:", error);
-        });
+      // // Send email with compressed image
+      // axios
+      //   .post(
+      //     "https://vercel-serverless-func-seven.vercel.app/api/send-email-image",
+      //     {
+      //       email: email,
+      //       image: base64Image,
+      //     },
+      //     {
+      //       headers: {
+      //         "Content-Type": "application/json",
+      //       },
+      //     }
+      //   )
+      //   .then((response) => {
+      //     console.log("Email sent:", response.data);
+      //   })
+      //   .catch((error) => {
+      //     console.error("Error sending email:", error);
+      //   });
 
       // Send email with terms and conditions
       axios
